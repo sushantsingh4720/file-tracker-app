@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "file-tracker-app",
+    "slug": "file-tracker-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "file-tracker-app"
+}
