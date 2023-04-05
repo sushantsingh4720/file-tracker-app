@@ -1,8 +1,15 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
+import React, { useEffect, useState, useContext } from 'react'
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import AuthContext from '../store/authContext';
+
 
 const Account = ({navigation}) => {
-  return (
+    const [user, setUser] = useState(null);
+    const authCtx = useContext(AuthContext);
+    console.log(authCtx)
+
+    return (
     <View style={styles.wrapper}>
         {/* <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingBottom: 10}}>
             <Pressable style={ styles.backButton}>
@@ -12,8 +19,14 @@ const Account = ({navigation}) => {
                 account
             </Text>
         </View> */}
+        <View style={{alignItems: "center"}}>
+            <Image source={{
+            uri: authCtx?.profile,
+            }}  style={{width: 120, height: 120, borderRadius: 10}}/>
+        </View>
         <View style={styles.userBox}>
-            <Text style={{ color: "white", fontSize: 24, fontWeight: 700 }}> Movie Singh </Text>
+            <Text style={{ color: "white", fontSize: 24, fontWeight: 700 }}> { authCtx?.firstName + " " + authCtx?.lastName} </Text>
+            <Text style={{ color: "white", paddingLeft:2, fontSize: 16, paddingTop: 4 }}> { authCtx.email} </Text>
         </View>
 
         <View style={ styles.cardRow }>
@@ -28,6 +41,14 @@ const Account = ({navigation}) => {
                 </Text>
             </View>
         </View>
+        <Pressable onPress={() => {authCtx.logout()
+        }} style={ styles.cardRow }>
+            <Text>
+                Log out
+            </Text>
+        </Pressable>
+
+        
     </View>
   )
 }

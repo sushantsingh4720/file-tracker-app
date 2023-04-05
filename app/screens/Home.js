@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
-import { RNCamera } from 'react-native-camera'
-import React from 'react'
+// import { RNCamera } from 'react-native-camera'
+import React, { useState } from 'react'
 
 const Home = ({navigation}) => {
+
   return (
     <View style={styles.wraper}>
       <View style={styles.row}>

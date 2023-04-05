@@ -1,31 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Account from './app/screens/Account';
-import Home from './app/screens/Home';
-import AvatarButton from './app/components/AvatarButton';
+import { StyleSheet } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator();
+import MainStack from './app/screens/MainStack';
+import { AuthContextProvider } from './app/store/authContext';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} 
-          options={({ navigation, route }) => ({
-            headerTitle: "Lets Track",
-            headerRight: () => (
-              <AvatarButton navigation={navigation}/>
-            ),
-          })}
-        />
-        <Stack.Screen name="Account" component={Account} />
-      </Stack.Navigator>
-      <StatusBar style="auto" />
-      </View>
+      <AuthContextProvider>
+        <MainStack/>
+        <StatusBar style="auto" />
+      </AuthContextProvider>
     </NavigationContainer>
   );
 }

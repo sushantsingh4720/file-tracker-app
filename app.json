@@ -3,9 +3,25 @@
     "name": "file-tracker-app",
     "slug": "file-tracker-app",
     "version": "1.0.0",
+    "scheme": "com.windtalker.filetrackerapp",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bc7de1eb-c49e-491d-9ade-ffd54c054272"
+      }
+    }
   },
-  "name": "file-tracker-app"
+  "name": "file-tracker-app",
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/gkvlogo.png",
+      "backgroundColor": "#FFFFFF"
+    },
+    "package": "com.windtalker.filetrackerapp"
+  },
+  "web": {
+    "favicon": "./assets/gkvlogo.png"
+  }
 }
