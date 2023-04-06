@@ -7,6 +7,8 @@ import AvatarButton from '../components/AvatarButton';
 import Home from './Home';
 import Account from './Account';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ExistingFiles from './ExistingFiles';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +17,6 @@ const MainStack = () => {
     const authCtx = useContext(AuthContext);
 
     const sync = async () =>{
-        console.log("exudjdf")
         try {
         await AsyncStorage.getItem("token").then((data) => {
             setToken(data)
@@ -32,6 +33,7 @@ const MainStack = () => {
   }, [authCtx.token])
 
   return (
+    <PaperProvider>
     <View style={styles.container}>
         { !token ? <DefaultScreen/> :
         // <Home />
@@ -45,9 +47,11 @@ const MainStack = () => {
               })}
             />
             <Stack.Screen name="Account" component={Account}/>
+            <Stack.Screen name="ExistingFiles" component={ExistingFiles} />
           </Stack.Navigator>
         }
     </View>
+    </PaperProvider>
   )
 }
 

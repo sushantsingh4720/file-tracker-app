@@ -25,7 +25,9 @@ const Home = ({navigation}) => {
           }],
           backgroundColor: '#2277ee'
         },
-        styles.card, styles.rowCard]}>
+        styles.card, styles.rowCard]}
+        onPress={() => navigation.navigate("ExistingFiles")}
+        >
             <Image source={require('../assets/existing_files.png')} style={{ width: 100, height: 100}}/>
             <Text style={styles.cardText}> Existing Files </Text>
         </Pressable>
