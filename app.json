@@ -11,7 +11,15 @@
       "eas": {
         "projectId": "bc7de1eb-c49e-491d-9ade-ffd54c054272"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ]
   },
   "name": "file-tracker-app",
   "android": {

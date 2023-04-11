@@ -1,8 +1,9 @@
 import { StyleSheet, View, Image, Pressable } from 'react-native'
-// import { RNCamera } from 'react-native-camera'
+
 import React, { useState } from 'react'
-import { Text, Snackbar } from 'react-native-paper';
+import { Text, Snackbar, Modal } from 'react-native-paper';
 import NewFileButton from '../components/NewFileButton';
+import TakeInFileButton from '../components/TakeInFileButton';
 
 const Home = ({navigation}) => {
   const [snackbarText, setSnackbarText] = useState("")
@@ -26,16 +27,7 @@ const Home = ({navigation}) => {
             <Text style={styles.cardText}> Existing Files </Text>
         </Pressable>
       </View>
-      <Pressable style={({ pressed }) => [
-        {
-          transform: [{
-            scale: pressed ? 1.07 : 1
-          }],
-          backgroundColor: '#2277ee'
-        },
-        styles.card, styles.columnCard]}>
-            <Text style={styles.cardText}> Take In File </Text>
-        </Pressable>
+        <TakeInFileButton setSnackbarText={setSnackbarText} setSnackbarVisibility={setSnackbarVisibility}/>
         <Pressable style={({ pressed }) => [
         {
           transform: [{
@@ -46,17 +38,16 @@ const Home = ({navigation}) => {
         styles.card, , styles.columnCard]}>
             <Text style={styles.cardText}> Send Out File </Text>
         </Pressable>
+
         <View style={{alignItems:"center", flex: 1}}>
-        </View>
-        <View>
-        <Snackbar
-          visible={snackbarVisibility}
-          onDismiss={() => setSnackbarVisibility(false)}
-          action={{
-              label: 'Close'
-          }}>
-          {snackbarText}
-        </Snackbar>
+          <Snackbar
+            visible={snackbarVisibility}
+            onDismiss={() => setSnackbarVisibility(false)}
+            action={{
+                label: 'Close'
+            }}>
+            {snackbarText}
+          </Snackbar>
         </View>
     </View>
   )
@@ -68,7 +59,7 @@ const styles = StyleSheet.create({
     wraper:{
         flex: 1,
         padding: 20,
-        backgroundColor: '#dee4f7'
+        backgroundColor: '#efe8f6'
     },
     row:{
         flexDirection: 'row',
@@ -92,7 +83,8 @@ const styles = StyleSheet.create({
     columnCard:{
         // width: 100,
         height: 100,
-        marginTop: 20
+        marginTop: 20,
+        borderRadius: 20,
     },
-    
+
 })
