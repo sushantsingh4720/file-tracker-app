@@ -35,7 +35,7 @@ const ExistingFiles = ({navigation}) => {
     if( isLoading ){
         return (
             <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
-                <ActivityIndicator size="large" color='blue'/>
+                <ActivityIndicator size="large" color='#2277ee'/>
             </View>
         )
     }
@@ -49,7 +49,7 @@ const ExistingFiles = ({navigation}) => {
             renderItem= { ({item}) => {
             return(
                 <View style={{paddingBottom: 20}}>
-                <Surface elevation={3} style={styles.fileCard} onTouchEnd={()=>console.log(item.fileName)}>
+                <Surface elevation={3} style={styles.fileCard} onTouchEnd={()=>navigation.navigate("File", {fileId: item.fileId})}>
                     <Text variant="titleLarge" style={{paddingBottom:10}}>{item?.fileName}</Text>
                     <Text>{item.description}</Text>
                 </Surface>
