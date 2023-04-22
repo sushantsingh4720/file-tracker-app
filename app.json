@@ -4,13 +4,13 @@
     "slug": "file-tracker-app",
     "icon":"./app/assets/icon.png",
     "version": "1.0.0",
-    "scheme": "com.windtalker.filetrackerapp",
+    "scheme": "com.letstrack.filetrackerapp",
     "assetBundlePatterns": [
       "**/*"
     ],
     "extra": {
       "eas": {
-        "projectId": "bc7de1eb-c49e-491d-9ade-ffd54c054272"
+        "projectId": "e4bf9751-e7ec-4851-ab83-e96fecea58b1"
       }
     },
     "plugins": [
@@ -20,7 +20,8 @@
           "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
         }
       ]
-    ]
+    ],
+    "owner": "letstrack"
   },
   "name": "Let's Track",
   "android": {
@@ -28,7 +29,7 @@
       "foregroundImage": "./assets/icon.png",
       "backgroundColor": "#FFFFFF"
     },
-    "package": "com.windtalker.filetrackerapp"
+    "package": "com.letstrack.filetrackerapp"
   },
   "web": {
     "favicon": "./assets/icon.png"
