@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "file-tracker-app",
+    "name": "Let's Track",
     "slug": "file-tracker-app",
+    "icon":"./app/assets/icon.png",
     "version": "1.0.0",
     "scheme": "com.windtalker.filetrackerapp",
     "assetBundlePatterns": [
@@ -21,15 +22,15 @@
       ]
     ]
   },
-  "name": "file-tracker-app",
+  "name": "Let's Track",
   "android": {
     "adaptiveIcon": {
-      "foregroundImage": "./assets/gkvlogo.png",
+      "foregroundImage": "./assets/icon.png",
       "backgroundColor": "#FFFFFF"
     },
     "package": "com.windtalker.filetrackerapp"
   },
   "web": {
-    "favicon": "./assets/gkvlogo.png"
+    "favicon": "./assets/icon.png"
   }
 }
